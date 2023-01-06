@@ -65,22 +65,22 @@ def get_public_ip(instance_id):
 get_public_ip("i-0893f346bf16424ba")
 
 # getting the VPC ID of instance
-def get_public_ip(instance_id):
+def get_private_ip(instance_id):
     reservations = ec2_client.describe_instances(InstanceIds=[instance_id]).get("Reservations")
 
     for reservation in reservations:
         for instance in reservation['Instances']:
             print(instance.get("VpcId"))
-get_public_ip("i-0893f346bf16424ba")
+get_private_ip("i-0893f346bf16424ba")
 
 # getting the Subnet ID of instance
-def get_public_ip(instance_id):
+def get_subnet_id(instance_id):
     reservations = ec2_client.describe_instances(InstanceIds=[instance_id]).get("Reservations")
 
     for reservation in reservations:
         for instance in reservation['Instances']:
             print(instance.get("SubnetId"))
-get_public_ip("i-0893f346bf16424ba")
+get_subnet_id("i-0893f346bf16424ba")
 
 # getting all running instances
 def get_running_instances():
