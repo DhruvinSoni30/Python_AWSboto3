@@ -108,7 +108,7 @@ def reboot_instance(instance_id):
 reboot_instance("i-0893f346bf16424ba")
 
 # stop instance
-def reboot_instance(instance_id):
+def stop_instance(instance_id):
     response = ec2_client.stop_instances(InstanceIds=[instance_id])
     print(response)
 reboot_instance("i-0893f346bf16424ba")
